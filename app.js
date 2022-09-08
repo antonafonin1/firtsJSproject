@@ -10,14 +10,6 @@ const personalMoviesDB = {
     privet: false
 };
 
-if (10 <= personalMoviesDB.count <= 30) {
-    console.log('Вы классический зритель');
-} else if (personalMoviesDB.count > 30) {
-    console.log('Вы киноман');
-} else {
-    console.log('Произошла ошибка');
-}
-
 let moviess = '';
 let rating = +'';
 
@@ -33,7 +25,13 @@ for (let i = 0; i < 2; i++) {
     }
 } 
 
-
+if (10 <= personalMoviesDB.count <= 30) {
+    console.log('Вы классический зритель');
+} else if (personalMoviesDB.count > 30) {
+    console.log('Вы киноман');
+} else {
+    console.log('Произошла ошибка');
+}
 
 const actor = prompt('Как зовут вашего любимого актера?');
 
