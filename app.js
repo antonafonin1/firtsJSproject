@@ -42,9 +42,27 @@ const personalMoviesDB = {
             console.log(personalMoviesDB);
         }
     },
+    toggleVisibleMyDB: () => {
+        if (personalMoviesDB.privat) {
+            personalMoviesDB.privat = false;
+        } else {
+            personalMoviesDB.privat = true;
+        }
+    },
     writeYourGenres: () => {
         for (let i = 1; i <= 3; i++) {
-            personalMoviesDB.genres[i - 1] = prompt(`Ваш любимый жанр под номером ${i}`);
+            let genre = prompt(`Ваш любимый жанр под номером ${i}`);
+
+            if (genre == '' || genre == null) {
+                console.log('wrong');
+                i--;
+            } else {
+                personalMoviesDB.genres[i - 1] = genre;
+            }
         }
+
+        personalMoviesDB.genres.forEach((item, i) => {
+            console.log(`Любимый жанр ${i + 1} - это ${item}`);
+        });
     }
 };
